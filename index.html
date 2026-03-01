@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Estética & Beleza | Transforme sua Beleza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-gold: #e8b4b8;
+            --soft-pink: #fadadd;
+            --deep-rose: #d4a5a5;
+            --champagne: #f7e7ce;
+            --charcoal: #2d2d2d;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf9f7;
+        }
+        
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #d4a5a5 0%, #e8b4b8 50%, #f7e7ce 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(212, 165, 165, 0.2);
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .instagram-gradient {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .modal-enter {
+            animation: modalEnter 0.3s ease-out;
+        }
+        
+        @keyframes modalEnter {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="smooth-scroll text-gray-800 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="glass-card border-b border-rose-200/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <div class="flex items-center">
+                        <span class="text-2xl font-bold serif text-rose-900 tracking-wide">Lumina</span>
+                        <span class="ml-2 text-sm text-rose-600 uppercase tracking-widest">Estética</span>
+                    </div>
+                    
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#servicos" class="text-gray-700 hover:text-rose-600 transition-colors font-medium">Serviços</a>
+                        <a href="#experiencia" class="text-gray-700 hover:text-rose-600 transition-colors font-medium">Experiência</a>
+                        <a href="#agendamento" class="text-gray-700 hover:text-rose-600 transition-colors font-medium">Agendamento</a>
+                        <a href="#depoimentos" class="text-gray-700 hover:text-rose-600 transition-colors font-medium">Depoimentos</a>
+                    </div>
+                    
+                    <button onclick="openBookingModal()" class="bg-gradient-to-r from-rose-400 to-rose-600 text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        Agendar pelo Instagram
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-20 right-0 w-96 h-96 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 float-animation"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-champagne rounded-full mix-blend-multiply filter blur-3xl opacity-40 float-animation" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-b from-transparent via-rose-50/50 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100 text-rose-800 text-sm font-medium">
+                    <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                    Atendimento via WhatsApp e Instagram 24/7
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-gray-900">
+                    Realce sua <span class="gradient-text">beleza natural</span> com excelência
+                </h1>
+                
+                <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+                    Experiência única em cuidados estéticos. Do cabelo às unhas, cada detalhe pensado para você se sentir extraordinária.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="openBookingModal()" class="group relative px-8 py-4 bg-gray-900 text-white rounded-full font-semibold overflow-hidden transition-all hover:shadow-2xl">
+                        <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-rose-400 to-rose-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <span class="relative flex items-center justify-center gap-2">
+                            Agendar Agora
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </button>
+                    
+                    <a href="#servicos" class="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:border-rose-400 hover:text-rose-600 transition-all flex items-center justify-center gap-2">
+                        Conhecer Serviços
+                        <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-6 pt-4">
+                    <div class="flex -space-x-3">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Cliente">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Cliente">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Cliente">
+                    </div>
+                    <div class="text-sm">
+                        <p class="font-semibold text-gray-900">+2.000 clientes satisfeitas</p>
+                        <div class="flex items-center gap-1 text-yellow-500">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <span class="text-gray-600 ml-1">4.9/5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=1000&fit=crop" alt="Salão de Beleza" class="w-full h-[600px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    
+                    <!-- Floating Cards -->
+                    <div class="absolute bottom-6 left-6 right-6 glass-card rounded-2xl p-4 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full instagram-gradient flex items-center justify-center text-white">
+                                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">@lumina.estetica</p>
+                                    <p class="text-sm text-gray-600">Resposta automática em segundos</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Online</span>
+                        </div>
+                        <div class="text-sm text-gray-600 bg-white/50 rounded-lg p-3">
+                            💬 Envie "AGENDAR" e nossa assistente virtual cuidará do seu horário instantaneamente!
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Decorative Elements -->
+                <div class="absolute -top-6 -right-6 w-24 h-24 bg-rose-300 rounded-full opacity-20 blur-xl"></div>
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-champagne rounded-full opacity-30 blur-xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-rose-600 font-semibold tracking-wider uppercase text-sm">Nossos Serviços</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">Cuidados completos para você</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Cada serviço é uma experiência única, realizada por profissionais especializados com produtos de alta qualidade.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cabelo -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-rose-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=400&fit=crop" alt="Cabeleireiro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold text-rose-600">
+                            A partir de R$ 80
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600">
+                                <i data-lucide="scissors" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Cabeleireiro</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cortes modernos, coloração, mechas, tratamentos capilares e penteados para todas as ocasiões.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Análise capilar gratuita</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Produtos importados</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Profissionais especializados</li>
+                        </ul>
+                        <button onclick="selectService('cabelo')" class="w-full py-3 border-2 border-rose-200 text-rose-600 rounded-xl font-semibold hover:bg-rose-50 transition-colors">
+                            Agendar Este Serviço
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Manicure -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-rose-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=400&fit=crop" alt="Manicure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold text-rose-600">
+                            A partir de R$ 45
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600">
+                                <i data-lucide="hand" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Manicure</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Esmaltação tradicional, em gel, alongamento em fibra de vidro e nail art personalizada.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Esmaltes hipoalergênicos</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Técnicas importadas</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Durabilidade garantida</li>
+                        </ul>
+                        <button onclick="selectService('manicure')" class="w-full py-3 border-2 border-rose-200 text-rose-600 rounded-xl font-semibold hover:bg-rose-50 transition-colors">
+                            Agendar Este Serviço
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pedicure -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-rose-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&h=400&fit=crop" alt="Pedicure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold text-rose-600">
+                            A partir de R$ 50
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600">
+                                <i data-lucide="footprints" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Pedicure</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cuidados completos para seus pés, esfoliação, hidratação profunda e esmaltação duradoura.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Spa dos pés incluso</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Massagem relaxante</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Tratamento de calos</li>
+                        </ul>
+                        <button onclick="selectService('pedicure')" class="w-full py-3 border-2 border-rose-200 text-rose-600 rounded-xl font-semibold hover:bg-rose-50 transition-colors">
+                            Agendar Este Serviço
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Extensão de Cílios -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-rose-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=600&h=400&fit=crop" alt="Extensão de Cílios" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold text-rose-600">
+                            A partir de R$ 120
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600">
+                                <i data-lucide="eye" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Extensão de Cílios</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Técnicas: fio a fio, volume russo, híbrido. Olhar marcante e natural por mais tempo.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Fios premium sintéticos</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Cola anti-alérgica</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Manutenção inclusa 7 dias</li>
+                        </ul>
+                        <button onclick="selectService('cilios')" class="w-full py-3 border-2 border-rose-200 text-rose-600 rounded-xl font-semibold hover:bg-rose-50 transition-colors">
+                            Agendar Este Serviço
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Depilação -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-rose-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop" alt="Depilação" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold text-rose-600">
+                            A partir de R$ 35
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Depilação</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cera quente, cera fria e linha. Técnicas que minimizam a dor e cuidam da sua pele.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Ceras hipoalergênicas</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Pós-depilação incluso</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Privacidade garantida</li>
+                        </ul>
+                        <button onclick="selectService('depilacao')" class="w-full py-3 border-2 border-rose-200 text-rose-600 rounded-xl font-semibold hover:bg-rose-50 transition-colors">
+                            Agendar Este Serviço
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Combo Relax -->
+                <div class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg border border-rose-100 relative">
+                    <div class="absolute top-0 right-0 bg-gradient-to-l from-rose-500 to-rose-600 text-white px-4 py-1 rounded-bl-2xl text-sm font-bold z-10">
+                        MAIS POPULAR
+                    </div>
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=400&fit=crop" alt="Combo Relax" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold text-rose-600 mt-8">
+                            20% OFF
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600">
+                                <i data-lucide="gift" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Dia da Noiva</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pacote completo: cabelo, manicure, pedicure, cílios e depilação. Um dia só seu.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> 5 serviços inclusos</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Coffee break especial</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-500"></i> Brinde surpresa</li>
+                        </ul>
+                        <button onclick="selectService('combo')" class="w-full py-3 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all">
+                            Agendar Pacote
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Automation Feature -->
+    <section id="agendamento" class="py-24 bg-gradient-to-br from-rose-50 to-champagne/30 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23e8b4b8\' fill-opacity=\'0.2\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-rose-200 text-rose-800 text-sm font-medium shadow-sm">
+                        <i data-lucide="bot" class="w-4 h-4"></i>
+                        Inteligência Artificial
+                    </div>
+                    
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        Agendamento pelo Instagram em <span class="gradient-text">segundos</span>
+                    </h2>
+                    
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Nossa assistente virtual está disponível 24 horas para marcar seu horário. Basta enviar uma mensagem no Direct que cuidamos de tudo para você.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/60 backdrop-blur border border-rose-100">
+                            <div class="w-12 h-12 rounded-full instagram-gradient flex items-center justify-center text-white flex-shrink-0">
+                                <span class="font-bold text-lg">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Envie "AGENDAR"</h4>
+                                <p class="text-gray-600">No Direct do Instagram @lumina.estetica, envie a palavra-chave para iniciar.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/60 backdrop-blur border border-rose-100">
+                            <div class="w-12 h-12 rounded-full instagram-gradient flex items-center justify-center text-white flex-shrink-0">
+                                <span class="font-bold text-lg">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Escolha o Serviço</h4>
+                                <p class="text-gray-600">Nossa IA apresenta os serviços disponíveis e horários em tempo real.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/60 backdrop-blur border border-rose-100">
+                            <div class="w-12 h-12 rounded-full instagram-gradient flex items-center justify-center text-white flex-shrink-0">
+                                <span class="font-bold text-lg">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Receba a Confirmação</h4>
+                                <p class="text-gray-600">Você recebe todos os detalhes e lembretes automáticos no WhatsApp.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openInstagram()" class="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                        <span>Testar Agora no Instagram</span>
+                        <i data-lucide="external-link" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-white rounded-3xl shadow-2xl p-6 max-w-md mx-auto border border-rose-100">
+                        <div class="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white font-bold">
+                                    L
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Lumina Estética</p>
+                                    <p class="text-xs text-green-500 flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                                        Online agora
+                                    </p>
+                                </div>
+                            </div>
+                            <i data-lucide="phone" class="w-5 h-5 text-gray-400"></i>
+                        </div>
+
+                        <div class="space-y-4 h-96 overflow-y-auto" id="chat-messages">
+                            <div class="flex justify-center">
+                                <span class="text-xs text-gray-400 bg-gray-100 px-3 py-1 rounded-full">Hoje</span>
+                            </div>
+
+                            <div class="flex items-end gap-2">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                                    L
+                                </div>
+                                <div class="bg-gray-100 rounded-2xl rounded-bl-none px-4 py-3 max-w-[80%]">
+                                    <p class="text-sm text-gray-800">Olá! ✨ Bem-vinda à Lumina! Sou sua assistente virtual. Como posso ajudar você hoje?</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-end gap-2">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                                    L
+                                </div>
+                                <div class="bg-gray-100 rounded-2xl rounded-bl-none px-4 py-3 max-w-[80%]">
+                                    <p class="text-sm text-gray-800">Para agendar, digite <strong>AGENDAR</strong> ou escolha uma opção:</p>
+                                    <div class="mt-2 space-y-2">
+                                        <button class="w-full text-left px-3 py-2 bg-white rounded-lg text-sm text-rose-600 border border-rose-200 hover:bg-rose-50 transition-colors">💇‍♀️ Cabelo</button>
+                                        <button class="w-full text-left px-3 py-2 bg-white rounded-lg text-sm text-rose-600 border border-rose-200 hover:bg-rose-50 transition-colors">💅 Manicure</button>
+                                        <button class="w-full text-left px-3 py-2 bg-white rounded-lg text-sm text-rose-600 border border-rose-200 hover:bg-rose-50 transition-colors">👁️ Cílios</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-end gap-2 justify-end">
+                                <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl rounded-br-none px-4 py-3 max-w-[80%]">
+                                    <p class="text-sm text-white">AGENDAR</p>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                                    V
+                                </div>
+                            </div>
+
+                            <div class="flex items-end gap-2">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                                    L
+                                </div>
+                                <div class="bg-gray-100 rounded-2xl rounded-bl-none px-4 py-3 max-w-[80%]">
+                                    <p class="text-sm text-gray-800">Perfeito! Vou te mostrar nossos horários disponíveis para esta semana... 🗓️</p>
+                                    <div class="mt-2 flex gap-2 overflow-x-auto pb-2">
+                                        <span class="px-3 py-1 bg-white rounded-full text-xs border border-rose-200 whitespace-nowrap">Hoje 14h</span>
+                                        <span class="px-3 py-1 bg-white rounded-full text-xs border border-rose-200 whitespace-nowrap">Amanhã 10h</span>
+                                        <span class="px-3 py-1 bg-white rounded-full text-xs border border-rose-200 whitespace-nowrap">Sexta 16h</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 flex gap-2">
+                            <input type="text" placeholder="Digite uma mensagem..." class="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-400">
+                            <button class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white">
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Decorative -->
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-yellow-300 rounded-full opacity-20 blur-xl animate-pulse"></div>
+                    <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-rose-300 rounded-full opacity-20 blur-xl animate-pulse" style="animation-delay: 1s;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="depoimentos" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-rose-600 font-semibold tracking-wider uppercase text-sm">Depoimentos</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">O que nossas clientes dizem</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-rose-100 relative">
+                    <div class="absolute -top-4 left-8 w-8 h-8 bg-rose-500 rounded-full flex items-center justify-center text-white">
+                        <i data-lucide="quote" class="w-4 h-4"></i>
+                    </div>
+                    <div class="flex items-center gap-1 text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"A agendamento pelo Instagram é incrível! Marquei meu horário à meia-noite enquanto amamentava meu bebê. Super prático!"</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="Cliente">
+                        <div>
+                            <p class="font-semibold text-gray-900">Mariana Silva</p>
+                            <p class="text-sm text-gray-500">Cliente desde 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-rose-100 relative">
+                    <div class="absolute -top-4 left-8 w-8 h-8 bg-rose-500 rounded-full flex items-center justify-center text-white">
+                        <i data-lucide="quote" class="w-4 h-4"></i>
+                    </div>
+                    <div class="flex items-center gap-1 text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Profissionais excelentes! Minhas extensões de cílios duraram mais de 3 semanas perfeitas. O ambiente é maravilhoso."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="Cliente">
+                        <div>
+                            <p class="font-semibold text-gray-900">Carolina Mendes</p>
+                            <p class="text-sm text-gray-500">Cliente VIP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-rose-100 relative">
+                    <div class="absolute -top-4 left-8 w-8 h-8 bg-rose-500 rounded-full flex items-center justify-center text-white">
+                        <i data-lucide="quote" class="w-4 h-4"></i>
+                    </div>
+                    <div class="flex items-center gap-1 text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Fiz o Dia da Noiva aqui e foi mágico! Saí me sentindo a princesa que sempre sonhei no meu casamento."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="Cliente">
+                        <div>
+                            <p class="font-semibold text-gray-900">Amanda Costa</p>
+                            <p class="text-sm text-gray-500">Noiva realizada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-rose-500 via-gray-900 to-gray-900"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl lg:text-6xl font-bold text-white mb-6 serif">Pronta para se sentir incrível?</h2>
+            <p class="text-xl text-gray-300 mb-10">Agende agora mesmo pelo Instagram e ganhe 10% de desconto na primeira visita.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="openInstagram()" class="px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                    Agendar pelo Instagram
+                </button>
+                <a href="https://wa.me/5511999999999" target="_blank" class="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    WhatsApp
+                </a>
+            </div>
+            
+            <p class="mt-8 text-sm text-gray-400">Rua das Flores, 123 - Jardim Europa, São Paulo/SP</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-rose-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <span class="text-2xl font-bold serif text-rose-900">Lumina</span>
+                    <p class="text-gray-600 text-sm">Transformando vidas através da beleza e autoestima desde 2020.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4">Serviços</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-rose-600 transition-colors">Cabeleireiro</a></li>
+                        <li><a href="#" class="hover:text-rose-600 transition-colors">Manicure & Pedicure</a></li>
+                        <li><a href="#" class="hover:text-rose-600 transition-colors">Extensão de Cílios</a></li>
+                        <li><a href="#" class="hover:text-rose-600 transition-colors">Depilação</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4">Horário</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>Seg - Sex: 9h às 20h</li>
+                        <li>Sábado: 9h às 18h</li>
+                        <li>Domingo: Fechado</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4">Redes Sociais</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 hover:bg-rose-200 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 hover:bg-rose-200 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 hover:bg-rose-200 transition-colors">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-rose-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500">© 2024 Lumina Estética. Todos os direitos reservados.</p>
+                <div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-rose-600 transition-colors">Política de Privacidade</a>
+                    <a href="#" class="hover:text-rose-600 transition-colors">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 modal-enter relative">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white mb-4">
+                    <i data-lucide="instagram" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Agendar pelo Instagram</h3>
+                <p class="text-gray-600">Você será redirecionada para nosso Direct onde nossa assistente virtual cuidará do seu agendamento em segundos.</p>
+            </div>
+            
+            <div class="space-y-3">
+                <button onclick="openInstagram()" class="w-full py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                    Abrir Instagram
+                </button>
+                <button onclick="closeBookingModal()" class="w-full py-4 border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:border-rose-400 hover:text-rose-600 transition-all">
+                    Voltar para o site
+                </button>
+            </div>
+            
+            <div class="mt-6 p-4 bg-rose-50 rounded-xl border border-rose-100">
+                <p class="text-sm text-rose-800 text-center">
+                    <i data-lucide="info" class="w-4 h-4 inline mr-1"></i>
+                    Dica: Envie <strong>"AGENDAR"</strong> para iniciar rapidamente!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Modal functions
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+            document.getElementById('bookingModal').classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+            document.getElementById('bookingModal').classList.remove('flex');
+        }
+
+        function openInstagram() {
+            window.open('https://instagram.com/lumina.estetica', '_blank');
+        }
+
+        function selectService(service) {
+            openBookingModal();
+            // Here you could pass the service parameter to pre-select in the chat
+        }
+
+        // Close modal on outside click
+        document.getElementById('bookingModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeBookingModal();
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
